@@ -1,46 +1,61 @@
 //Lab12-1
 #include<iostream>
-
+#include <cstdlib>
 using namespace std;
+
 double average(double* a, int size);
 double* maximum(double* a, int size);
 double* minimum(double* a, int size);
 
 int main() {
-    int size;
-    
+    int size, n;
     cout << "Enter size of array: ";
     cin >> size;
     cout << endl;
 
-    int* a = new int[size];
+    double* arr = new double(size);
     cout << "Enter " << size << " floating-point values: ";
-    for (int i = 0; i < size; i++) {
-        cin >> a[i];
-        average(a[i], size);
+    for (n = 0; n < size; n++) {
+        cin >> arr[n];
     }
-    return 0;
+
+    cout << "Entered: ";
+    for (n = 0; n < size; n++) {
+        cout << arr[n] << " ";
+    }
+    cout << endl;
+
+    double avg = average(arr, size);
+    cout << "Average is " << avg << endl;
+    cout << endl;
+
+    maximum(arr, size);
+    cout << endl;
+
+    minimum(arr, size);
+    cout << endl;
 }
 
 double average(double* a, int size) {
-    int sum = 0;
-    float avg;
-    for (a = 0; a < size; a++) {
-        sum += a[size];
+    double sum = 0;
+    double avg;
+    for (int n = 0; n < size; n++) {
+        sum += a[n];
     }
-    avg = (float)sum / size;
+    avg = sum / size;
+    return avg;
 }
 
 double* maximum(double* a, int size) {
-    int max = 0;
-    if (n > max) {
-        max = n;
+    for (int i = 1; i < size; i++) {
+        if(a < (a + i)) {
+            a = (a + i);
+        }
     }
+    cout << "Maximum value is element #" << a;
 }
 
 double* minimum(double* a, int size) {
-    int min = 0;
-    if (a < min) {
-        min = n;
-    }
+    
+    cout << "Minimum value is element #" << a;
 }
