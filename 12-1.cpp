@@ -13,7 +13,7 @@ int main() {
     cin >> size;
     cout << endl;
 
-    double* arr = new double(size);
+    double* arr = new double[size];
     cout << "Enter " << size << " floating-point values: ";
     for (n = 0; n < size; n++) {
         cin >> arr[n];
